@@ -1,4 +1,6 @@
 import {heroui} from '@heroui/theme';
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,7 +10,14 @@ module.exports = {
     "./node_modules/@heroui/theme/dist/components/(button|ripple|spinner).js"
   ],
     theme: {
-      extend: {},
+      extend: {
+        fontFamily: {
+          poppins: ['Poppins', ...defaultTheme.fontFamily.sans], // Add your custom font
+        },
+        colors: {
+          primary : "#DD6B20",
+        },
+      },
     },
   plugins: [heroui()],
   }
